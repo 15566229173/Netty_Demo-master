@@ -1,4 +1,6 @@
 namespace java thrift.generated
+//增加python数据处理
+namespace py py.thrift.generated
 
 //基本数据类型通过typedef定义类型转换成自己熟悉的语言类型表达方式
 typedef i16 short
