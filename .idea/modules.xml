@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Netty_Demo-master.iml" filepath="$PROJECT_DIR$/Netty_Demo-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netty_lib/netty_lib.iml" filepath="$PROJECT_DIR$/netty_lib/netty_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testnetty/testnetty.iml" filepath="$PROJECT_DIR$/testnetty/testnetty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thriftdemo/thriftdemo.iml" filepath="$PROJECT_DIR$/thriftdemo/thriftdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xjnetty/xjnetty.iml" filepath="$PROJECT_DIR$/xjnetty/xjnetty.iml" />
+    </modules>
+  </component>
+</project>

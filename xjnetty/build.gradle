@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.google.protobuf'//添加插件
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+//编写编译任务，调用plugin编译生成java文件
+protobuf {
+    //这里配置protoc编译器
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.0.0-alpha-2'
+    }
+    plugins {
+        javalite {
+            // The codegen for lite comes as a separate artifact
+            artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'
+        }
+    }
+//    generateProtoTasks.generatedFilesBaseDir = "$projectDir/src/main/java" //指定编译生成java类的存放位置
+    generateProtoTasks {
+        all().each { task ->
+            task.plugins {
+                javalite {
+                    outputSubDir = '' //指定存放位置的二级目录，这里未指定
+                }
+            }
+        }
+    }
+}
+//指定原始.proto文件的位置
+android {
+    sourceSets {
+        main {
+            java {
+                srcDirs 'src/main/java'
+            }
+            proto {
+                srcDirs 'src/main/proto'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+//    implementation 'io.netty:netty-all:4.1.33.Final'
+    implementation files('libs/netty-all-4.1.16.Final.jar')
+    implementation files('libs/netty-all-4.1.16.Final-sources.jar')
+    //服务器端
+//    implementation 'com.google.protobuf:protobuf-java:3.7.0-rc1'
+//    implementation 'com.google.protobuf:protobuf-java-util:3.7.0-rc1'
+
+    //移动端客户端-移动端添加必须写
+    implementation 'com.google.protobuf:protobuf-lite:3.0.1'//添加此行代码
+    api 'com.android.support:multidex:1.0.3'
+
+}

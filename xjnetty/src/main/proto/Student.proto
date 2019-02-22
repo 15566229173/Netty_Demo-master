@@ -1,0 +1,20 @@
+syntax ="proto2";//语法使用的是proto2
+
+package com.xj.netty.googleProtocolBuffer;
+//可以设置为SPEED、CODE_SIZE或LITE_RUNTIME。
+//这将通过以下方式影响c++和Java代码生成器(可能还有第三方生成器):
+//默认SPEED
+option optimize_for=SPEED;
+
+//制定java包名可以与上面不同
+option java_package="com.xj.netty.googleProtocolBuffer";
+//java类名
+option java_outer_classname="DataInfo";
+
+//定会消息
+
+message Student{
+    required string name=1;
+    optional int32 age=2;
+    optional string address=3;
+}

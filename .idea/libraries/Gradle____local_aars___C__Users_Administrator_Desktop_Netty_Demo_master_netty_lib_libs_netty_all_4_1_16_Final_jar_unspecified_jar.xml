@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:C.\Users\Administrator\Desktop\Netty_Demo-master\netty_lib\libs\netty-all-4.1.16.Final.jar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/netty_lib/libs/netty-all-4.1.16.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/netty_lib/libs/netty-all-4.1.16.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
